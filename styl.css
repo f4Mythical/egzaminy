@@ -1,0 +1,186 @@
+* {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+}
+
+header, footer {
+    background-color: #ccc;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 80px;
+    margin-left: 30px;
+}
+
+header h1 {
+    margin-left: 20px;
+    text-shadow: 5px 5px 10px white;
+}
+
+.baner {
+    position: relative;
+}
+
+.baner img {
+    width: 100%;
+}
+
+.baner div {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 30%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+
+nav {
+    
+    height: 50px;
+    font-size: 0;
+}
+
+nav a {
+    display: inline-block;
+    width: 20%;
+    background-color: firebrick;
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: background-color 0.5s;
+    font-size: 12px;
+}
+
+nav a:hover {
+    background-color: maroon;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+main section {
+    margin: 20px 0;
+    width: 96%;
+    padding: 2%;
+    background: linear-gradient(to bottom right, #eee, #ccc);
+    border-radius: 20px;
+    text-align: center;
+}
+
+main .powrot {
+ display: block;
+    text-align: left;
+}
+footer p {
+    text-align: center;
+    width: 100%;
+}
+
+a[href="#gora"] {
+    display: block;
+    padding: 10px;
+    width: fit-content;
+    background-color: firebrick;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    justify-content: start;
+    text-decoration: none;
+}
+
+.link {
+    margin: 10px;
+    color: firebrick;
+}
+
+.link:nth-child(odd) {
+    font-size: 20px;
+}
+
+.link:nth-child(even) {
+    font-size: 30px;
+}
+
+figure {
+    width: 17%;
+    margin: 1%;
+    background-color: white;
+    display: inline-block;
+    animation: pulse 2s ease infinite;
+}
+
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    padding: 10px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+table {
+    margin: 20px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+tr:hover {
+    background-color: #ccc;
+    color: white;
+}
+
+input:not([type="radio"]) {
+    width: 96%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+form {
+    background-color: #eee;
+    width: 50%;
+    margin: 20px auto;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px 0px #bbb;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    45%, 60% { transform: scale(1.05) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(3deg); }
+    55% { transform: scale(1.05) rotate(-3deg); }
+}
