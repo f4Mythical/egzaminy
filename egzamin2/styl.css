@@ -16,7 +16,7 @@ main {
 #lewy {
     width: 50%;
     height: 600px;
-    overflow: scroll;
+    overflow: auto;
 }
 #prawy {
     background-color: #880E4F;
@@ -34,6 +34,6 @@ input,select {
     margin: 5px;
     width: 70%;
 }
-input:hover {
+tr:hover {
     background-color: #F8BBD0;
 }

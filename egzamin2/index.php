@@ -43,7 +43,7 @@
 
         <section id="prawy">
             <h2>Zapisy na kursy</h2>
-            <form action="" method="POST"> <label for="imie">Imie</label><br>
+            <form action="" method="POST"> <label for="imie">Imię</label><br>
                 <input type="text" name="imie" id="imie"><br> <label for="nazwisko">Nazwisko</label><br>
                 <input type="text" name="nazwisko" id="nazwisko"><br>
 
@@ -64,7 +64,7 @@ FROM kursy';
                     ?>
                 </select><br>
 
-                <input type="submit" value="Dodane dane" name="wyslij" id="wyslij">
+                <input type="submit" value="Dodaj dane" name="wyslij" id="wyslij">
                 <!--skrypt3-->
                 <?php
                 if (isset($_POST['wyslij'])) {
@@ -75,7 +75,7 @@ FROM kursy';
                     $q = "INSERT INTO uczestnicy (imie, nazwisko, wiek) 
                        VALUES ('$imie', '$nazwisko', '$wiek')";
                     $mq = mysqli_query($db, $q);
-                    echo '<br>Dane uczestnika ' . $imie . " " . $nazwisko . ' zostały dodane';
+                    echo '<br><p>Dane uczestnika ' . $imie . " " . $nazwisko . ' zostały dodane</p>';
                     }
                 
                   
@@ -83,13 +83,14 @@ FROM kursy';
                     echo '<p>Wprowadź wszystkie dane</p>';
                 }
                 }
+                mysqli_close($db);
                 ?>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>Strone wykonał: 00000000</p>
+        <p>Stronę wykonał: 00000000</p>
     </footer>
 </body>
 
