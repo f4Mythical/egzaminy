@@ -46,25 +46,24 @@
             ?>
         </section>
 
-        <section id="right">
+        <section id="prawy">
             <h2>Zapisy na kursy</h2>
-            <form action="" method="POST"> <label for="imie">Imie</label>
-                <input type="text" name="imie" id="imie"><br> <label for="nazwisko">Nazwisko</label>
+            <form action="" method="POST"> <label for="imie">Imie</label><br>
+                <input type="text" name="imie" id="imie"><br> <label for="nazwisko">Nazwisko</label><br>
                 <input type="text" name="nazwisko" id="nazwisko"><br>
 
-                <label for="wiek">Wiek</label>
+                <label for="wiek">Wiek</label><br>
                 <input type="number" name="wiek" id="wiek"><br>
 
-                <label for="opcje">Rodzaj kursu</label>
+                <label for="opcje">Rodzaj kursu</label><br>
                 <select id="opcje" name="opcje">
                     <!---skrypt2-->
                     <?php
                     $q = 'SELECT kursy.nazwa
 FROM kursy';
                     $mq = mysqli_query($db, $q);
-                    while($row = mysqli_fetch_assoc($mq)){
-                        echo '<option>'. $row['nazwa'] . '</option>';
-
+                    while ($row = mysqli_fetch_assoc($mq)) {
+                        echo '<option value="' . $row['nazwa'] . '">' . $row['nazwa'] . '</option>';
                     }
 
                     ?>
@@ -72,17 +71,16 @@ FROM kursy';
 
                 <input type="submit" value="Dodane dane" name="wyslij" id="wyslij">
                 <!--skrypt3-->
-                <?php 
-                if(isset($_POST['wyslij']) && isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['wiek'])){
+                <?php
+                if (isset($_POST['wyslij']) && isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['wiek'])) {
                     $imie = $_POST['imie'];
                     $nazwisko = $_POST['nazwisko'];
                     $wiek = $_POST['wiek'];
                     $q = "INSERT INTO uczestnicy (imie, nazwisko, wiek) 
                        VALUES ('$imie', '$nazwisko', '$wiek')";
                     $mq = mysqli_query($db, $q);
-                   echo '<br>Dane uczestnika ' . $imie . " " . $nazwisko . ' zostały dodane';
-                }
-                else {
+                    echo '<br>Dane uczestnika ' . $imie . " " . $nazwisko . ' zostały dodane';
+                } else {
                     echo '<p>Wprowadź wszystkie dane</p>';
                 }
                 ?>
