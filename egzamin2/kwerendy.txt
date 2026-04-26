@@ -1,0 +1,14 @@
+SELECT kursy.kod, kursy.nazwa, kursy.cena 
+FROM kursy
+ORDER BY kursy.cena asc
+
+SELECT kursy.nazwa
+FROM kursy
+
+INSERT INTO uczestnicy (imie, nazwisko, wiek) 
+VALUES ('Tadeusz', 'Wysocki', 36);
+
+SELECT kursy.nazwa, count(kursy_uczestnicy.id_uczestnika) as Zapisanych 
+FROM kursy 
+JOIN kursy_uczestnicy ON kursy_uczestnicy.kod_kursu = kursy.kod 
+GROUP BY kursy.kod;
