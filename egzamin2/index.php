@@ -15,12 +15,7 @@
 
     <main>
         <section id="lewy">
-            <!-- <table>
-                <tr> <th>Kurs</th>
-                    <th>Nazwa</th>
-                    <th>Cena</th>
-                </tr>
-                </table> -->
+          
             <!--skrypt1-->
             <?php
             $db = mysqli_connect('localhost', 'root', '', 'szkolenia');
@@ -72,16 +67,21 @@ FROM kursy';
                 <input type="submit" value="Dodane dane" name="wyslij" id="wyslij">
                 <!--skrypt3-->
                 <?php
-                if (isset($_POST['wyslij']) && isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['wiek'])) {
-                    $imie = $_POST['imie'];
+                if (isset($_POST['wyslij'])) {
+                    if(!empty($_POST['imie']) && !empty($_POST['nazwisko']) && !empty($_POST['wiek'])){
+  $imie = $_POST['imie'];
                     $nazwisko = $_POST['nazwisko'];
                     $wiek = $_POST['wiek'];
                     $q = "INSERT INTO uczestnicy (imie, nazwisko, wiek) 
                        VALUES ('$imie', '$nazwisko', '$wiek')";
                     $mq = mysqli_query($db, $q);
                     echo '<br>Dane uczestnika ' . $imie . " " . $nazwisko . ' zostały dodane';
-                } else {
+                    }
+                
+                  
+             else {
                     echo '<p>Wprowadź wszystkie dane</p>';
+                }
                 }
                 ?>
             </form>
