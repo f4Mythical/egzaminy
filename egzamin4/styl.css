@@ -8,6 +8,9 @@ header,footer {
     color: MistyRose;
     padding: 10px;
 }
+section {
+    display: block;
+}
 nav {
     width: 20%;
     float: left;
