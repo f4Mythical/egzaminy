@@ -1,0 +1,22 @@
+ZAPYTANIE 1:
+SELECT miejsca.nazwa FROM miejsca ORDER BY miejsca.nazwa asc;
+ZAPYTANIE 2:
+SELECT miejsca.cena
+FROM miejsca
+WHERE miejsca.nazwa = "malbork"
+ZAPYTANIE 3:
+SELECT miejsca.nazwa, miejsca.cena, miejsca.link_obraz
+FROM miejsca
+WHERE miejsca.link_obraz like "0%"
+ZAPYTANIE 4:
+SELECT miejsca.nazwa, round(avg(wycieczki.liczba_doroslych))
+FROM miejsca 
+JOIN wycieczki ON miejsca.id_miejsca = wycieczki.id_miejsca
+GROUP BY miejsca.nazwa
+ZAPYTANIE 5: 
+CREATE TABLE klienci (
+    id_klienta int UNSIGNED AUTO_INCREMENT  PRIMARY KEY NOT NULL  ,
+    imie varchar(20),
+    nazwisko varchar(40),
+    data_ur date
+    );
