@@ -92,7 +92,7 @@ ORDER BY smok.pochodzenie ";
         </main>
     </div>
     <footer>
-        Blok stopki
+Stronę wykonał: 000000000000
     </footer>
     <script>
         function pokazBloki(numer) {
