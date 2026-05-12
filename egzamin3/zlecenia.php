@@ -39,7 +39,7 @@
                 <input type="submit" value="Szukaj klientów" name="wyslijMid">
             </form>
             <ul>
-            </ul>
+                </ul>
         </section>
         <aside>
             <img src="tapeta_lewa.png" alt="usługi"><br>
