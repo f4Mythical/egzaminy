@@ -1,0 +1,19 @@
+ZAPYTANIE 1:
+SELECT pojazdy.marka, pojazdy.model, pojazdy.cena
+FROM pojazdy
+WHERE pojazdy.marka = "BM"
+limit 15
+ZAPYTANIE 2:
+SELECT avg(pojazdy.cena) as "Średnia cena", MAX(pojazdy.cena) as "Maksymalna cena"
+FROM pojazdy
+WHERE pojazdy.model = "meta"
+ZAPYTANIE 3:
+SELECT pojazdy.marka,pojazdy.model, pojazdy.cena, kolory.nazwa, kolory.doplata
+FROM pojazdy
+JOIN kolory ON kolory.id = pojazdy.kolor
+WHERE pojazdy.model = "alfa"
+ZAPYTANIE 4:
+SELECT pojazdy.marka,pojazdy.model,pojazdy.cena
+FROM pojazdy
+ORDER BY rand()
+LIMIT 2
