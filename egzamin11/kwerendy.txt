@@ -1,0 +1,18 @@
+zapytanie 1:
+SELECT min(notatki.priorytet)
+FROM notatki
+WHERE notatki.priorytet=3
+zapytanie 2:
+SELECT notatki.nazwa,notatki.priorytet
+FROM notatki
+WHERE notatki.nazwa like "%na%"
+zapytanie 3:
+SELECT osoby.imie, notatki.nazwa
+FROM notatki
+JOIN osoby ON osoby.id = notatki.Osoby_id
+WHERE notatki.priorytet = 5
+zapytanie 4:
+SELECT osoby.imie,count(notatki.Osoby_id)
+FROM notatki
+JOIN osoby ON notatki.Osoby_id = osoby.id
+group by osoby.id
