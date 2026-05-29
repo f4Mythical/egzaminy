@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursy komputerowe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="baner.png" alt="kursy komputerowe">
+    </header>
+    <nav>
+        <a href="index.html" target="_parent">Strona głowna</a>
+        <a href="raty.html" target="_parent">Koszt rat</a>
+        <a href="https://moje-szkolenia.pl/" target="_parent">Nasz partner</a>
+    </nav>
+
+    <main>
+        <h3>Oblicz miesięczną ratę</h3>
+        <input type="checkbox" value="react" name="kursy" id="react" class="kontrolki">
+        <label for="react">Kurs React.js</label><br>
+
+        <input type="checkbox" value="java" name="kursy" id="java" class="kontrolki">
+        <label for="java">Kurs JavaScript</label><br>
+
+        <label for="raty">Liczba rat:</label>
+        <input type="number" name="raty" id="raty" class="kontrolki"><br>
+
+        <select name="opcje" id="opcje" class="kontrolki">
+            <option value="1">Warszawa</option>
+            <option value="2">Katowice</option>
+            <option value="3">Gdańsk</option>
+        </select><br>
+        <input type="submit" value="Oblicz" id="oblicz" onclick="oblicz()" class="kontrolki">
+        <p id="tresc"></p>
+        <script>
+            function oblicz() {
+                let isReact = document.getElementById("react").checked;
+                console.log(isReact);
+                let isJava = document.getElementById("java").checked;
+                console.log(isJava);
+                let raty = document.getElementById("raty").value;
+                console.log(raty);
+                let opcje = document.getElementById("opcje").value;
+                console.log(opcje);
+                let miasto = opcje == 1 ? "Warszawa" : (opcje == 2 ? "Katowice" : (opcje == 3 ? "Gdansk" : ""));
+                console.log(miasto);
+                let kwota = isReact && isJava ? 8000 : (isReact ? 5000 : (isJava ? 3000 : 0));
+                console.log(kwota);
+                let calkwota = kwota / raty;
+                console.log(calkwota);
+                let paragraf = document.getElementById("tresc");
+
+                paragraf.innerHTML = `Kurs odbędzie się w ${miasto}. Koszt całkowity: ${kwota} zł. Płacisz ${raty} rat po ${calkwota} zł`;
+            }
+        </script>
+    </main>
+    <footer>
+        <p>Autor strony: 000000</p>
+    </footer>
+</body>
+
+</html>
