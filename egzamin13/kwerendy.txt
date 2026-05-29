@@ -1,0 +1,24 @@
+ZAPYTANIE 1:
+SELECT zawodnicy.pseudonim 
+FROM zawodnicy
+WHERE year(zawodnicy.data_zdobycia) = 2020 and month(zawodnicy.data_zdobycia) = 8
+ZAPYTANIE 2:
+SELECT zawodnicy.pseudonim, zawodnicy.tytul
+FROM zawodnicy
+WHERE zawodnicy.klasa = "3A" and zawodnicy.tytul like "_%" 
+
+ALBO
+SELECT zawodnicy.pseudonim, zawodnicy.tytul
+FROM zawodnicy
+WHERE zawodnicy.klasa = "3A" and zawodnicy.tytul is not null and zawodnicy.tytul <> ""
+
+ZAPYTANIE 3:
+SELECT zawodnicy.pseudonim, zawodnicy.klasa, zawodnicy.ranking
+FROM zawodnicy
+ORDER BY zawodnicy.ranking
+LIMIT 10
+
+ZAPYTANIE 4
+SELECT zawodnicy.pseudonim, zawodnicy.data_zdobycia, datediff(now(), zawodnicy.data_zdobycia) as "dni"
+from zawodnicy
+where zawodnicy.tytul is not null and zawodnicy.tytul <> ""
