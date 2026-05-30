@@ -1,0 +1,15 @@
+ZAPYTANIE 1:
+SELECT pracownicy.imie,pracownicy.nazwisko
+FROM pracownicy
+WHERE pracownicy.staz < 5
+ZAPYTANIE 2
+SELECT avg(pracownicy.pensja), stanowiska.nazwa
+FROM pracownicy
+JOIN stanowiska ON stanowiska.id = pracownicy.stanowiska_id
+GROUP BY stanowiska.nazwa
+ZAPYTANIE 3:
+SELECT pracownicy.imie,pracownicy.nazwisko,pracownicy.pensja
+FROM pracownicy
+WHERE pracownicy.pensja = (SELECT max(pensja) FROM pracownicy)
+ZAPYTANIE 4:
+UPDATE pracownicy SET staz = staz + 1

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+<h2>Efekty na obrazach</h2>
+    </header>
+    <main>
+    <div id="blok1">
+<img src="pszczola.jpg" id="obraz1" alt="pszczoła na fioletowym kwiatku"><br>
+<input type="radio" name="opcje" class="lista" id="blur" value="1">Blur<br>
+<input type="radio" name="opcje" class="lista" id="sepia" value="2">Sepia<br>
+<input type="radio" name="opcje" class="lista" id="negatywny" value="3">Negatywny<br>
+<input type="submit" value="Zastosuj" onclick="zmiana1()">
+
+    </div>
+    <div id="blok2">
+        <img src="pomarancza.jpg" id="obraz2" alt="drzewo pomarańczy"><br>
+        <input type="submit" value="Kolorowy" onclick="kolorowy()">
+        <input type="submit" value="Czarnobialy" onclick="czarnoBialy()">
+
+    </div>
+    <div id="blok3">
+<img src="owoce.jpg" id="obraz3" alt="Koszt pelen owocow"><br>
+<input type="range" id="suwak" min="0" max="100" value="100"><br>
+<input type="submit" value="Zastosuj" onclick="transformacja()">
+    </div>
+    <div id="blok4">
+        <img src="zolw.jpg" id="obraz4" alt="Zolw w wodzie" ><br>
+        <input type="range" id="suwak2" min="0" max="250"><br>
+        <input type="submit" value="Zastosuj" onclick="transformacja2()">
+    </div>
+    </main>
+    <footer>
+        <p><a href="http://www.css.com/" target="_blank">Zobacz inne efekty obrazu</a></p>
+        <p>Strone wykonał: 00000</p>
+    </footer>
+    <script>
+      function zmiana1(){
+        let obraz1 = document.getElementById("obraz1");
+        let element = document.getElementsByClassName("lista");
+        let tab="";
+        console.log(element);
+        for(let i = 0; i < element.length;i++){
+            if(element[i].checked){
+             tab = element[i].value;
+            }
+        }
+        console.log(tab);
+        console.log("obraz1");
+        if(tab == 1){
+            let losowy = Math.floor(Math.random() * (8- 4 + 1) )+ 4;
+            obraz1.style.filter = `blur(${losowy}px)`;
+        
+        
+            }else if(tab == 2){
+
+                obraz1.style.filter = 'sepia(100%)';
+            } else if(tab == 3){
+                obraz1.style.filter = 'invert(100%)';
+            }
+      }
+      function kolorowy(){
+        let obraz2 = document.getElementById("obraz2");
+        obraz2.style.filter = "none";
+      }
+      function czarnoBialy(){
+        let obraz2 = document.getElementById("obraz2");
+        obraz2.style.filter = "grayscale(100%)";
+      }
+      function transformacja(){
+        let suwak = document.getElementById("suwak").value;
+        console.log(suwak);
+        let obraz3 = document.getElementById("obraz3");
+        obraz3.style.filter = `opacity(${suwak}%)`;
+      }
+      function transformacja2(){
+        let suwak2 = document.getElementById("suwak2").value;
+        console.log(suwak2);
+        let obraz4 = document.getElementById("obraz4");
+        obraz4.style.filter = `brightness(${suwak2}%)`;
+      }
+
+    </script>
+</body>
+</html>
