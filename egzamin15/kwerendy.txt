@@ -1,0 +1,16 @@
+zapytanie 1:
+SELECT osoby.imie,osoby.nazwisko
+FROM osoby
+WHERE osoby.imie like "A%"
+zapytanie 2:
+SELECT zadania.zadanie, zadania.data
+FROM zadania
+WHERE zadania.zadanie like "%mebli%"
+ORDER BY zadania.data
+zapytanie 3:
+SELECT osoby.nazwisko,count(zadania.id_zadania) as "Liczba zadan"
+FROM osoby 
+JOIN zadania ON osoby.id_osoba = zadania.osoba_id
+GROUP BY osoby.id_osoba
+zapytanie 4:
+ALTER TABLE osoby drop column telefon

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaż paneli podłogowych</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header><img src="montaz_paneli.png" alt="firma usługowa"></header>
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="oferta.html">Oferta</a>
+        <a href="koszty.html">Kalkulator kosztow</a>
+    </nav>
+    <main>
+<h1>Kalkulator kosztów montażu</h1>
+<label for="szerokosc">Szerokosc pomieszczenia[m]</label>
+<input type="number" name="szerokosc" id="szerokosc">
+<label for="dlugosc">Dlugosc pomieszczenia[m]</label>
+<input type="number" name="dlugosc" id="dlugosc">
+<p>Typ panelu</p>
+<p>
+        <input type="radio" class="typy" id="laminowane" name="rodzaj_paneli" value="1">
+        <label for="laminowane">Panele laminowane</label>
+    </p>
+    <p>
+        <input type="radio"  class="typy" id="winylowe" name="rodzaj_paneli" value="2">
+        <label for="winylowe">Panele winylowe</label>
+    </p>
+    <p>
+        <input type="radio"  class="typy" id="deska" name="rodzaj_paneli" value="3">
+        <label for="deska">Deska podłogowa</label>
+    </p>
+<input type="submit" value="Oblicz" id="oblicz" onclick="oblicz()">
+
+<p id="wynik"></p>
+<script>
+    function oblicz(){
+let szerokosc = document.getElementById("szerokosc").value;
+let dlugosc = document.getElementById("dlugosc").value;
+console.log(szerokosc);
+console.log(dlugosc);
+let typ = document.getElementsByClassName("typy");
+let element = "";
+console.log(typ);
+for(let i = 0; i < typ.length;i++){
+    if(typ[i].checked){
+    element = typ[i].value;
+    break;
+    }
+}
+console.log(element);
+let pole = szerokosc * dlugosc;
+let mnoznik = element==1 ? 12 : (element==2 ? 14 : (element == 3 ? 18 : 0));
+console.log(mnoznik);  
+let koszt = pole * mnoznik;
+let p = document.getElementById("wynik");
+p.innerHTML = `Pole powierzchni pomieszczenia ${pole}, koszt montazu ${koszt}`;
+
+    }
+    </script>
+    </main>
+    <footer>
+        <h5>Autor strony: 000000</h5>
+    </footer>
+</body>
+
+</html>
