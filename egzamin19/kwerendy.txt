@@ -1,0 +1,14 @@
+ZAPYTANIE 1:
+SELECT osoby.imie, osoby.nazwisko
+FROM osoby
+WHERE year(osoby.dataUr) > 2000
+ZAPYTANIE 2:
+SELECT DISTINCT adresy.miasto
+FROM adresy
+ORDER BY adresy.miasto 
+ZAPYTANIE 3:
+SELECT osoby.imie,osoby.nazwisko,telefony.numer
+FROM osoby
+JOIN telefony ON osoby.id = telefony.Osoby_id
+ZAPYTANIE 4:
+ALTER TABLE adresy ADD COLUMN numerMieszkania int after numer
