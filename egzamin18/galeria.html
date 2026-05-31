@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biuro turystyczne</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h1>Zwiedzamy Polskę</h1>
+    </header>
+    <section id="lewy">
+    <button onclick="zmianaWLewo()">&lt</button>
+    </section>
+    <section id="srodkowy">
+    <img src="1.jpg" alt="Aktywne zdjecie" id="zdjecia">
+    </section>
+    <section id="prawy">
+        <button onclick="zmianaWPrawo()">&gt</button>
+
+    </section>
+    <section id="miniatury">
+        <img src="1.jpg" alt="Gdansk">
+        <img src="2.jpg" alt="Krakow">
+        <img src="3.jpg" alt="Niedzica">
+        <img src="4.jpg" alt="Pieniny">
+        <img src="5.jpg" alt="Szklarska Poręba">
+        <img src="6.jpg" alt="Tatry">
+        <img src="7.jpg" alt="Wrocław">
+    </section>
+    <footer>
+        <h3>Autorem galerii jest:</h3>
+        <p>000000000000000</p>
+<a href="http://pixbay.com" target="_blank">Więcej zdjęć</a>
+    </footer>
+    <script>
+        let indeks = 1
+        function zmianaWLewo(){
+                    let zdjecia = document.getElementById("zdjecia");
+            console.log("test");
+                indeks--;
+                console.log(indeks);
+                if(indeks==0){
+                    indeks=7;
+                }
+            
+            zdjecia.src = `${indeks}.jpg`;
+        }
+        function zmianaWPrawo(){
+                    let zdjecia = document.getElementById("zdjecia");
+                indeks++;
+                console.log(indeks);
+                if(indeks==8) {
+                    indeks=1;
+                }
+                            zdjecia.src = `${indeks}.jpg`;
+
+        }
+        </script>
+</body>
+</html>
