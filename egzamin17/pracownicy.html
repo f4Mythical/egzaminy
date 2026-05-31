@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasz zespół</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="logo firmy">
+    </header>
+    <header>
+        <h1>Nasz zepsol</h1>
+    </header>
+    <main>
+        <div id="karta1" class="karta">
+            <img src="osoba1.jpg" alt="Dyrektor">
+            <h2>Krzysztof Dobromilski</h2>
+            <h3>Dyrektor</h3>
+            <p>Firma logistyczna była jego marzeniem. Zrealizował je 10 lat temu. Nasza firma prosperuje dzięki
+                Krzysztofowi</p>
+            <p>telefon: 111222333</p>
+           <h5> <a href="mailto:Krzysztof.Dobromilski@firma.pl">Kontakt</a></h5>
+            
+        </div>
+        <div id="karta2" class="karta">
+            <img src="osoba2.jpg" alt="Kierownik logistyków">
+            <h2>Joanna Trojanowska
+            </h2>
+            <h3>Kierownik logistyków
+            </h3>
+            <p>Od początku firmy z nami. Wie jak zorganizować pracę swoich logistyków aby wszystko było na czas
+            </p>
+            <p>telefon: 222333444</p>
+            <h5><a href="mailto:Joanna.Trojanowska@firma.pl">Kontakt</a></h5>
+        </div>
+        <div id="karta3" class="karta">
+            <img src="osoba3.jpg" alt="Kadry">
+            <h2>Ewa Nowak</h2>
+            <h3>Księgowość i kadry</h3>
+            <p>Od lat finanse powierzamy niezawodnej Ewie. Twardą ręką trzyma kasę i dba o wszystkich pracowników</p>
+            <p>telefon: 333444555</p>
+            <h5><a href="mailto:Ewa.Nowak@firma.pl">Kontakt</a></h5>
+        </div>
+    </main>
+    <section>
+        <blockquote id="cytat1" onclick="zmiana(1)">"Każdego dnia stawiam sobie nieosiągalne wyzwania i próbuję je
+            wykonać"
+        <p id="autor1">- Krzysztof</p></blockquote>
+        <blockquote id="cytat2" onclick="zmiana(2)">"Nie bój się porażek, im więcej ich rozwiążesz, tym szybciej
+            osiągniesz cel"
+        <p id="autor2">- Joanna</p></blockquote>
+        <blockquote id="cytat3" onclick="zmiana(3)">"Niezadowolony pracownik jest dla mnie źródłem nauki"
+        <p id="autor3">- Ewa</p></blockquote>
+        <script>
+            function zmiana(element) {
+                let cytat1 = document.getElementById("cytat1");
+                let autor1 = document.getElementById("autor1");
+
+                let cytat2 = document.getElementById("cytat2");
+                let autor2 = document.getElementById("autor2");
+
+                let cytat3 = document.getElementById("cytat3");
+                let autor3 = document.getElementById("autor3");
+                if (element == 1) {
+                    cytat1.style.display = "none";
+                    autor1.style.display = "none";
+                    cytat2.style.display = "block";
+                    autor2.style.display = "block";
+                }
+                else if (element == 2) {
+                    cytat2.style.display = "none";
+                    autor2.style.display = "none";
+                    cytat3.style.display = "block";
+                    autor3.style.display = "block";
+                }
+                else if (element == 3) {
+                    cytat3.style.display = "none";
+                    autor3.style.display = "none";
+                    cytat1.style.display = "block";
+                    autor1.style.display = "block";
+                }
+            }
+            //         let i = 1;
+
+            // function zmiana(){
+            //     const tabCytat = [
+            //         '"Nie bój się porażek, im więcej ich rozwiążesz, tym szybciej osiągniesz cel"',
+            //         '"Niezadowolony pracownik jest dla mnie źródłem nauki"',
+            //         '"Każdego dnia stawiam sobie nieosiągalne wyzwania i próbuję je wykonać"'
+            //     ];
+            //     const tabAutorzy = [
+            //         `- Krzysztof`,
+            //         `- Joanna`,
+            //         `- Ewa`,
+            //     ]
+            //     let cytat = tabCytat[i];
+            //     console.log(cytat);
+            //     let autor = tabAutorzy[i];
+            //         console.log(autor);
+
+            //     let poleCytat = document.getElementById("cytat");
+            //     let poleAutorzy = document.getElementById("autor");
+            //     poleCytat.innerHTML = cytat;
+            //     poleAutorzy.innerHTML = autor;
+            //     i++;
+            //     if(i == 3){
+            //         i=0;
+            //     }
+            // }
+        </script>
+    </section>
+    <footer>Stronę wykonał:000000</footer>
+</body>
+
+</html>
