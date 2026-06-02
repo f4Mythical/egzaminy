@@ -1,0 +1,48 @@
+#kon {
+    font-family: Helvetica,sans-serif;
+    background-color: Linen;
+    color: #222;
+    margin: auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+header {
+background-color: black;
+color: white;
+width: 50%;
+height: 100px;
+float: left;
+}
+main{
+    padding: 20px;
+    clear: both;
+}
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+}
+table {
+    margin: 40px;
+}
+td {
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: #aaa ;
+
+}
+a:hover {
+    color: white;
+}
+li {
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: solid 1px white;
+}

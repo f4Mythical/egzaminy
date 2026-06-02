@@ -1,0 +1,13 @@
+ZAPYTANIE 1:
+SELECT klient.imie, klient.nazwisko,klient.miasto
+FROM klient
+WHERE klient.miasto = "Warszawa" or klient.miasto = "Legionowo"
+ZAPYTANIE 2:
+SELECT produkty.nazwa
+FROM produkty
+WHERE produkty.cena_brutto > 500
+ZAPYTANIE 3:
+SELECT kategorie.nazwa_kategorii, sum(produkty.cena_brutto)/count(produkty.id_prod)
+FROM kategorie
+JOIN produkty ON kategorie.id_kat = produkty.id_kat
+GROUP BY kategorie.nazwa_kategorii
