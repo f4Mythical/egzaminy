@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+<h1>Formularz rejestracyjny konferencji <em>Nasze Kwiaty</em></h1>
+    </header>
+    <main>
+        <form>
+        <div id="blok1">
+          
+              <h2>Dane osobowe</h2>
+            <input type="text" name="imie" id="imie" placeholder="Wpisz imię..." required>
+            <input type="text" name="nazwisko" id="nazwisko" placeholder="Wpisz nazwisko..." required>
+            <button type="button" id="nastepny" onclick="zmiana('imie')">Nastepna karta</button>
+            
+        </div>
+        <div id="blok2">
+         <h2>Dane kontaktowe</h2>
+         <input type="email" name="mail" id="mail" placeholder="Twoj email...">
+         <input type="tel" name="numer" id="numer" placeholder="Twoj numer telefonu...">
+        <button type="button" id="nastepny" onclick="zmiana('email')">Nastepna karta</button>
+
+        </div>
+        <div id="blok3">
+               <h2>Hasło do logowania</h2>
+            <input type="password" name="haslo" id="haslo" placeholder="Podaj hasło">
+            <input type="password" name="powhaslo" id="powhaslo" placeholder="Powtorz hasło">
+            <button type="button" id="weryfikacja" onclick="zatwierdz()">Zatwierdz</button>
+
+        </div>
+    </form>
+    </main>
+    <footer>
+<div id="stopka1">
+    <video controls >
+        <source src="motyl.mp4" type="video/mp4">
+            Przeglądarka nie obsługuje tego formatu
+
+    </video>
+</div>
+<div id="stopka2">
+    <h3>Plan konferencji</h3>
+    <table>
+        <tr><td>9:00 - 12:00</td><td>Pielegnacja roslin</td></tr>
+        <tr><td>13:00 - 15:00</td><td>Targi kwiatowe</td></tr>
+    </table>
+</div>
+<div id="stopka3">
+    <p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p>
+</div>
+<div id="stopka4">
+    <p>Formularz wykonał: 00000</p>
+</div>
+    </footer>
+    <script>
+        function zmiana(wartosc) {
+            let blok1 = document.getElementById("blok1");
+            let blok2 = document.getElementById("blok2");
+            let blok3 = document.getElementById("blok3");
+            console.log("test");
+            if(wartosc == "imie"){
+                blok1.style.visibility = "hidden";
+                blok2.style.visibility = "visible";
+            }
+            else if(wartosc == "email") {
+                 blok2.style.visibility = "hidden";
+                blok3.style.visibility = "visible";
+            }
+
+        }
+        function zatwierdz(){
+            let haslo = document.getElementById('haslo').value;
+            let powhaslo = document.getElementById('powhaslo').value;
+       
+            console.log(haslo + " " + powhaslo)
+            if(haslo != powhaslo) {
+                alert("Podane hasla roznia sie");
+                return;
+            }
+            let imie = document.getElementById('imie').value;
+            let nazwisko = document.getElementById('nazwisko').value;
+            console.log("Witaj " + imie + "  " + nazwisko);
+        }
+        </script>
+</body>
+</html>
