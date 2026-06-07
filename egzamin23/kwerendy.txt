@@ -1,0 +1,13 @@
+ZAPYTANIE 1:
+SELECT samochody.marka, samochody.rocznik 
+FROM samochody
+WHERE samochody.kolor like "niebieski"
+ZAPYTANIE 2:    
+SELECT COUNT(*) FROM samochody 
+WHERE (marka = 'Toyota' OR marka = 'Opel') AND stan = 'bardzo dobry';
+ZAPYTANIE 3:
+UPDATE samochody SET samochody.stan = "dobry" WHERE samochody.rocznik < 2004
+ZAPYTANIE 4:
+CREATE USER 'jan'@'localhost' identified by 'janKowalski1@'
+ZAPYTANIE 5:
+GRANT SELECT,INSERT,UPDATE on samochody to 'jan'@'localhost'
