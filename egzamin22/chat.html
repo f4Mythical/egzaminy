@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+
+</head>
+<body>
+    <header>
+        <h2>Chat</h2>
+    </header>
+    <aside>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne
+                <ol>
+                    <li>Turystyczne</li>
+                    <li>Żeglarski</li>
+                    <li>Filatelistyczny</li>
+                    <li>Hodowla zwierzątek domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="Jolka.jpg" alt="Jolanta Nowak">
+        <p>Krzystof Łukasiński</p>
+        <img src="Krzysiek.jpg" alt="Krzystof Łukasiński">
+    </aside>
+    <main>
+        <div id="czat">
+            <div class="lewy">
+                <img src="Jolka.jpg">
+                <p>Cześć idziesz jutro do kina?</p>
+            </div>
+            <div class="prawy">
+                <img src="Krzysiek.jpg">
+                <p>Tak! A ty?</p>
+            </div>
+        </div>
+        Wpisz wiadomość: <input type="text" id="wiadomosc"> <button type="button" onclick="wyslij()">Wyslij</button><br>
+        <button type="button" onclick="generuj()">Generuj losową odpowiedź</button>
+    </main>
+    
+    <footer>
+        <h5>Chat wykonał: 0000000</h5>
+    </footer>
+    <script>
+        function wyslij(){
+        let wiadomosc = document.getElementById("wiadomosc").value;
+        let div = document.getElementById("czat");
+        let blok = document.createElement("div");
+        blok.classList.add('lewy');
+        blok.innerHTML = '<img src="Jolka.jpg"><p>' + wiadomosc + '</p>'
+        div.appendChild(blok);
+        blok.scrollIntoView();
+
+    }
+    function generuj(){
+        let wiadomosci = [
+            "Świetnie!",
+"Kto gra główną rolę?",
+"Lubisz filmy Tego reżysera?",
+"Będę 10 minut wcześniej",
+"Może kupimy sobie popcorn?",
+"Ja wolę Colę",
+"Zaproszę jeszcze Grześka",
+"Tydzień temu też byłem w kinie na Diunie",
+"Ja funduję bilety"
+        ]
+        for(let i = 0; i < wiadomosci.length; i++) {
+            console.log(wiadomosci[i]);
+        }
+        let losowyIndex = Math.floor(Math.random() * wiadomosci.length);
+        let wiadomosc = wiadomosci[losowyIndex];
+        let div = document.getElementById("czat");
+        let blok = document.createElement("div");
+        blok.classList.add('prawy');
+        blok.innerHTML = '<img src="Krzysiek.jpg"><p>' + wiadomosc + '</p>'
+        div.appendChild(blok);
+        blok.scrollIntoView();
+    }
+        
+        </script>
+</body>
+</html>

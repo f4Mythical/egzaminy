@@ -1,0 +1,71 @@
+* {
+    font-family: Garamond;
+}
+header {
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80px;
+    float: left;
+}
+main {
+    width: 80%;
+    height: 600px;
+    float: left;
+}
+aside {
+    background-color: Coral;
+    width: 20%;
+    height: 680px;
+    float: right;
+}
+
+img {
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#czat {
+    border: 1px solid tomato;
+    margin: 15px;
+    height: 470px;
+    overflow:scroll;
+}
+.lewy, .prawy {
+    border-radius: 5px;
+    width: 90%;
+    height: 70px;
+    margin: 2%;
+    padding: 3px;
+}
+.lewy {
+    background-color: #EEE;
+
+}
+.lewy img {
+    float: left;
+}
+.prawy {
+    background-color: #CCC;
+    text-align: right;
+}
+.prawy img {
+    float: right;
+}
+footer {
+    background-color: Tomato;
+    color: white;
+    text-align: center;
+    clear: both;
+}
+button {
+    background-color: Tomato;
+    border: 1px solid DarkRed;
+    padding: 5px;
+    font-weight: bold;
+}
+input {
+    width: 500px;
+}
