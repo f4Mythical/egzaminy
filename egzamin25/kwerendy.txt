@@ -1,0 +1,28 @@
+ZAPYTANIE 1:
+SELECT maturzysta.id,maturzysta.imie,maturzysta.nazwisko
+FROM maturzysta
+WHERE maturzysta.szkola = "T3"
+ORDER BY maturzysta.nazwisko
+
+ZAPYTANIE 2:
+SELECT DISTINCT arkusz.przedmiot
+FROM arkusz
+
+ZAPYTANIE 3:
+SELECT max(arkusz.rok), min(arkusz.rok)
+FROM arkusz
+
+ZAPYTANIE 4:
+SELECT wynik.maturzysta_id, avg(wynik.punkty) as "Wynik"
+FROM wynik
+GROUP BY wynik.maturzysta_id
+ORDER BY Wynik desc
+LIMIT 1
+
+
+
+ZAPYTANIE 5:
+SELECT arkusz.rok,arkusz.sesja,arkusz.przedmiot,wynik.punkty
+FROM arkusz
+JOIN wynik ON arkusz.symbol = wynik.symbol
+WHERE wynik.maturzysta_id = 31
