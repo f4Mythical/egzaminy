@@ -19,7 +19,7 @@ maturzystów</h1>
 <img src="tu.jpg" alt="Matura">
 <img src="ra.jpg" alt="Matura">
 </aside>
-<div id="kontener-prawy">
+
 <section id="pierwszy">
 <h3>Wybierz ucznia z listy:</h3>
 <?php 
@@ -87,7 +87,6 @@ while($row = mysqli_fetch_assoc($mq)){
 }
 
 ?>
-</div>
 </div>
 </section>
 <footer>
