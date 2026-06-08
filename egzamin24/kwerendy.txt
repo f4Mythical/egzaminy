@@ -1,0 +1,13 @@
+ZAPYTANIE 1:
+SELECT towar.nazwa, towar.plik
+FROM towar
+LIMIT 10
+ZAPYTANIE 2:
+SELECT towar.id,towar.nazwa
+FROM towar
+ZAPYTANIE 3:
+SELECT towar.rodzaj,towar.nazwa,towar.cena
+FROM towar
+WHERE towar.id = 1
+ZAPYTANIE 4:
+INSERT INTO zamowienie VALUES (null,9,2,20)
