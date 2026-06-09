@@ -1,0 +1,22 @@
+ZAPYTANIE 1:
+SELECT potrawy.nazwa,potrawy.trudnosc,potrawy.kalorie
+FROM potrawy
+WHERE potrawy.idPotrawy = 7
+
+ZAPYTANIE 2:
+SELECT potrawy.nazwa,rodzaje.rodzaj
+FROM potrawy
+JOIN rodzaje ON rodzaje.idRodzaje = potrawy.idRodzaje
+WHERE potrawy.idPotrawy = 7
+
+ZAPYTANIE 3:
+SELECT potrawy.nazwa, alergeny.alergen
+FROM potrawy
+JOIN lista_alergenow ON lista_alergenow.idPotrawy = potrawy.idPotrawy
+JOIN alergeny ON lista_alergenow.idAlergeny = alergeny.idAlergeny
+WHERE potrawy.idPotrawy = 7
+
+ZAPYTANIE 4:
+SELECT potrawy.przepis,potrawy.plik
+FROM potrawy
+WHERE potrawy.idPotrawy = 7
