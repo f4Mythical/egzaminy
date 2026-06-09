@@ -32,7 +32,7 @@ $db = mysqli_connect('localhost', 'root', '', 'przepisy');
             <?php
             $id = $_GET['id'] ?? 7;
 
-            
+
             $q = "SELECT potrawy.nazwa,rodzaje.rodzaj
 FROM potrawy
 JOIN rodzaje ON rodzaje.idRodzaje = potrawy.idRodzaje
@@ -53,7 +53,7 @@ WHERE potrawy.idPotrawy = '$id'";
                 $trudnosc = $row['trudnosc'];
                 $trudnosc = $trudnosc == 1 ? "łatwe" : ($trudnosc == 2 ? "średnie" : ($trudnosc == 3 ? "trudne" : 0));
                 echo "<h2>{$row['nazwa']}</h2>";
-                echo "<p>Trudnosc $trudnosc, kalorie {$row['kalorie']}</p> " ;
+                echo "<p>Trudnosc $trudnosc, kalorie {$row['kalorie']}</p> ";
             }
             echo "<img src='separator.png' alt='przepis'>";
             echo "<p>Alergeny: ";
@@ -63,37 +63,37 @@ JOIN lista_alergenow ON lista_alergenow.idPotrawy = potrawy.idPotrawy
 JOIN alergeny ON lista_alergenow.idAlergeny = alergeny.idAlergeny
 WHERE potrawy.idPotrawy = '$id'
 ";
-$mq3 = mysqli_query($db,$q3);
-while($row3 = mysqli_fetch_assoc($mq3)){
-echo $row3['alergen'];
-}
-echo "</p>";
-echo "<h2>Skladniki</h2>";
-echo "<ul>";
-echo "<li>Lorem 1 kg</li>";
-echo "<li>Ipsum 2 szt.</li>";
-echo "<li>Dolor 200 g</li>";
-echo "<li>Sit amet (szczypta)</li>";
-echo "</ul>";
-echo "<p>";
-$q4 = "SELECT potrawy.przepis,potrawy.plik
+            $mq3 = mysqli_query($db, $q3);
+            while ($row3 = mysqli_fetch_assoc($mq3)) {
+                echo $row3['alergen'];
+            }
+            echo "</p>";
+            echo "<h2>Skladniki</h2>";
+            echo "<ul>";
+            echo "<li>Lorem 1 kg</li>";
+            echo "<li>Ipsum 2 szt.</li>";
+            echo "<li>Dolor 200 g</li>";
+            echo "<li>Sit amet (szczypta)</li>";
+            echo "</ul>";
+            echo "<p>";
+            $q4 = "SELECT potrawy.przepis,potrawy.plik
 FROM potrawy
 WHERE potrawy.idPotrawy = '$id'
 ";
-$mq4 = mysqli_query($db,$q4);
-while($row = mysqli_fetch_assoc($mq4)){
-    $nazwa_pliku = $row['plik'];
-    echo "{$row['przepis']}";
-}
-echo "</p>";
-         
+            $mq4 = mysqli_query($db, $q4);
+            while ($row = mysqli_fetch_assoc($mq4)) {
+                $nazwa_pliku = $row['plik'];
+                echo "{$row['przepis']}";
+            }
+            echo "</p>";
 
-       echo "</main>";
-        echo "<section style=\"background-image: url('{$nazwa_pliku}')\">";
-        echo "<h1>Blok Kulinarny</h1>";
-       echo "</section>";
-       mysqli_close($db);
-           ?>
+
+            echo "</main>";
+            echo "<section style=\"background-image: url('{$nazwa_pliku}')\">";
+            echo "<h1>Blok Kulinarny</h1>";
+            echo "</section>";
+            mysqli_close($db);
+            ?>
     </div>
 </body>
 
