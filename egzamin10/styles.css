@@ -1,0 +1,52 @@
+body {
+    background-color: #FFCC99;
+    font-family: Garamond;
+    text-align: center;
+}
+header,footer {
+    background-color: DarkGreen;
+    color: white;
+    padding: 30px;
+    font-size: 140%;
+
+}
+nav {
+    background-color: MediumSeaGreen;
+    word-spacing: 90px;
+    padding: 20px;
+    
+}
+#lewy {
+    width: 70%;
+    height: 500px;
+}
+#prawy {
+    width: 30%;
+    background-color: MediumSeaGreen;
+    height: 500px;
+    text-align: left;
+}
+table {
+    border: dashed 1px darkgreen;
+    margin: 30px auto 30px auto;
+
+}
+td,th{
+padding: 5px;
+}
+a {
+    color: white;
+}
+ul {
+    list-style-type: circle;
+}
+tr:hover {
+    background-color: darkgreen;
+    color: white;
+}
+section {
+    float: left;
+}
+footer {
+    clear: both;
+}
