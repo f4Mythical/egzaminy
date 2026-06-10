@@ -1,0 +1,19 @@
+ZAPYTANIE 1:
+SELECT personel.id,personel.imie,personel.nazwisko
+FROM personel
+WHERE personel.status = "policjant"
+
+ZAPYTANIE 2:
+SELECT pojazdy.typ, COUNT(pojazdy.id)
+FROM pojazdy
+GROUP BY pojazdy.typ
+
+ZAPYTANIE 3:
+SELECT personel.id,personel.nazwisko
+FROM personel
+LEFT JOIN  rejestr ON rejestr.id_personel = personel.id
+WHERE rejestr.id_personel is null
+
+ZAPYTANIE 4:
+INSERT INTO rejestr (data, id_personel, id_pojazd) 
+VALUES (CURDATE(), 1, 14);
