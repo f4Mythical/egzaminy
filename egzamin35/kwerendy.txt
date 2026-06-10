@@ -1,0 +1,18 @@
+ZAPYTANIE 1:
+SELECT szkolenia.Data,szkolenia.Temat
+FROM szkolenia
+ORDER BY szkolenia.Data
+
+ZAPYTANIE 2:
+SELECT szkolenia.Data,szkolenia.Temat,trenerzy.Nazwisko,trenerzy.Imie
+FROM szkolenia
+JOIN trenerzy ON trenerzy.Id = szkolenia.Id_trenera
+
+ZAPYTANIE 3:
+SELECT trenerzy.imie,count(szkolenia.Id_trenera)
+FROM trenerzy
+JOIN szkolenia ON trenerzy.Id = szkolenia.Id_trenera
+GROUP BY trenerzy.id
+
+ZAPYTANIE 4:
+ALTER TABLE zapisy CHANGE COLUMN Id_klienta Id_sluchacza INT
