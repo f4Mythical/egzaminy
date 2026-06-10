@@ -1,0 +1,18 @@
+ZAPYTANIE 1:
+SELECT klienci.imie,klienci.kolor,klienci.cena FROM klienci
+WHERE klienci.topKlient = 1
+
+ZAPYTANIE 2:
+SELECT klienci.imie,klienci.cena
+FROM klienci
+WHERE year(klienci.termin) = 2024 and month(klienci.termin) = 5 and day(klienci.termin) = 23
+
+ZAPYTANIE 3:
+SELECT klienci.imie,klienci.kolor, ksztalty.ksztalt
+FROM klienci
+JOIN ksztalty ON ksztalty.id = klienci.ksztalty_id
+WHERE ksztalty.ksztalt = "migdał"
+
+
+ZAPYTANIE 4:
+ALTER TABLE wzory ADD COLUMN doplata int
