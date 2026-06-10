@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pola figur</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Pola figur płaskich</h2>
+    </header>
+    <main>
+        <nav>
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Prostokąt i trójkąt</a></li>
+                <li><a href="kolo.html">Okrąg i koło</a></li>
+            </ul>
+        </nav>
+        <section>
+            <img src="1d.bmp" alt="Figura" id="duzyObraz"><br>
+            <img src="1m.bmp" alt="Wybierz trójkąk" class="wybierz" onclick="zmianaObrazku(1)" id="trojkat">
+            <img src="2m.bmp" alt="Wybierz kwadrat" class="wybierz" onclick="zmianaObrazku(2)" id="prostokat">
+        </section>
+        <aside>
+            <h3> Pole prostokata / pole trojkata</h3>
+            <label for="pierwszaLiczba">Bok prostokata/ podstawa trojkata</label><br>
+            <input type="number" name="pierwszaLiczba" id="pierwszaLiczba"><br>
+            <label for="drugaLiczba">Drugi bok prostokata/ wysokosc trojkata</label><br>
+            <input type="number" name="drugaLiczba" id="drugaLiczba"><br>
+            <button type="button" onclick="oblicz()">Oblicz</button>
+            <p id="wynik"></p>
+        </aside>
+    </main>
+    <footer>
+        <p>Autor:00000</p>
+    </footer>
+    <script> 
+        function zmianaObrazku(element){
+            let duzyObraz = document.getElementById("duzyObraz");
+            if(element == 1){
+                duzyObraz.src = "1d.bmp";
+            }
+            else if(element == 2){
+                duzyObraz.src = "2d.bmp";
+
+            }
+        }
+        function oblicz(){
+            let pierwszaLiczba = document.getElementById('pierwszaLiczba').value;
+            let drugaLiczba = document.getElementById('drugaLiczba').value;
+            let duzyObraz = document.getElementById("duzyObraz");
+            let wynik = document.getElementById('wynik');
+            if(duzyObraz.getAttribute("src") == "1d.bmp"){
+                let pole = (pierwszaLiczba * drugaLiczba)/2;
+                wynik.innerHTML = pole;
+            }
+            else if(duzyObraz.getAttribute("src") == "2d.bmp") {
+                let pole = pierwszaLiczba * drugaLiczba;
+                wynik.innerHTML = pole;
+            }
+        }
+    </script>
+</body>
+</html>

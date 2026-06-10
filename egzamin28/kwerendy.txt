@@ -1,0 +1,22 @@
+ZAPYTANIE 1:
+SELECT szczyty.id,szczyty.nazwa
+FROM szczyty
+ORDER BY szczyty.wysokosc DESC
+
+
+ZAPYTANIE 2:
+SELECT szczyty.nazwa,szczyty.plik
+FROM szczyty
+LIMIT 10
+
+ZAPYTANIE 3:
+SELECT szczyty.plik,szczyty.nazwa,szczyty.wysokosc,szczyty.pasmo,opis.opis
+FROM szczyty
+JOIN opis ON opis.szczyty_id = szczyty.id
+WHERE opis.id = 1
+
+ZAPYTANIE 4:
+
+SELECT szczyty.nazwa,szczyty.wysokosc,szczyty.pasmo
+FROM szczyty
+WHERE szczyty.pasmo like "Beskid%"
