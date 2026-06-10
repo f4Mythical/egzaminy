@@ -1,0 +1,23 @@
+ZAPYTANIE 1:
+SELECT choroby.nazwa
+FROM choroby
+WHERE choroby.zakazna = "T"
+ORDER BY choroby.nazwa
+
+ZAPYTANIE 2:
+SELECT choroby.id,choroby.nazwa
+FROM choroby
+
+ZAPYTANIE 3:
+SELECT objawy.nazwa
+FROM objawy
+JOIN choroby_objawy ON objawy.id = choroby_objawy.id_objawy
+JOIN choroby ON choroby.id = choroby_objawy.id_choroby
+WHERE choroby.id = 5
+
+ZAPYTANIE 4:
+SELECT choroby.nazwa,count(objawy.id)
+FROM choroby
+JOIN choroby_objawy ON choroby.id = choroby_objawy.id_choroby
+JOIN objawy ON objawy.id = choroby_objawy.id_objawy
+GROUP BY choroby.zakazna
