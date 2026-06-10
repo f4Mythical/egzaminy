@@ -1,0 +1,19 @@
+ZAPYTANIE 1:
+SELECT materialy.nazwa,materialy.ilosc, producenci.nazwaProd
+FROM materialy
+JOIN producenci ON materialy.Producenci_id = producenci.id
+WHERE materialy.ilosc > 9
+
+ZAPYTANIE 2:
+SELECT materialy.nazwa,producenci.nazwaProd,jednostki.nazwaJedn
+FROM materialy
+JOIN jednostki ON jednostki.id = materialy.Jednostki_id
+JOIN producenci ON producenci.id = materialy.Producenci_id
+
+ZAPYTANIE 3:
+CREATE USER 'zaopatrzenie'@'localhost' identified by 'Z@op@trzenie'
+
+ZAPYTANIE 4:
+GRANT select,UPDATE,INSERT,DELETE on firma.* to 'zaopatrzenie'@'localhost'
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+
+<body onload="oblicz()">
+    <header>
+        <h1>Sieci komputerowe</h1>
+    </header>
+    <section id="lewy">
+        <h2>Aktualizacja i zamowienia materiałow</h2>
+        <p>Do wewnetrznego uzytku firmy</p>
+        <img src="obraz.png" alt="siec komputerowa">
+    </section>
+    <section id="prawy">
+        <table>
+            <tr>
+                <th>Produkt</th>
+                <th>Jednostka</th>
+                <th>Dostepna ilosc</th>
+                <th>Aktualizacja</th>
+                <th>Zamowienie</th>
+            </tr>
+            <tr>
+                <td > Skretarka U/UTP drut</td>
+                <td>metr</td>
+                <td class="ilosc">20</td>
+                <td><button type="button" onclick="aktualizuj(1)">Aktualizuj</button></td>
+                <td><button type="button" onclick="zamow(1)">Zamow</button></td>
+            </tr>
+            <tr>
+                <td>Skretarka U/UTP linka</td>
+                <td>metr</td>
+                <td class="ilosc">2</td>
+                <td><button type="button" onclick="aktualizuj(2)">Aktualizuj</button></td>
+                <td><button type="button" onclick="zamow(2)">Zamow</button></td>
+            </tr>
+            <tr>
+                <td>Wtyki 8P8C</td>
+                <td>sztuki</td>
+                <td class="ilosc">10</td>
+                <td><button type="button" onclick="aktualizuj(3)">Aktualizuj</button></td>
+                <td><button type="button" onclick="zamow(3)">Zamow</button></td>
+            </tr>
+            <tr>
+                <td>Moduły Keystone</td>
+                <td>sztuki</td>
+                <td class="ilosc">30</td>
+                <td><button type="button" onclick="aktualizuj(4)">Aktualizuj</button></td>
+                <td><button type="button" onclick="zamow(4)">Zamow</button></td>
+            </tr>
+        </table>
+    </section>
+    <footer>
+        <a href="http://sieci.pl/" target="_self">Nasza strona internetowa</a>
+        <p>Strone przygotował: 000000</p>
+
+    </footer>
+    <script>
+    let ilosc = document.querySelectorAll('.ilosc');
+
+        function oblicz() {
+            console.log(ilosc.length);
+            for (let i = 0; i < ilosc.length; i++) {
+                if (ilosc[i].innerHTML == "0") {
+                    ilosc[i].style.backgroundColor = "red";
+                } else if (ilosc[i].innerHTML >= 1 && ilosc[i].innerHTML <= 5) {
+                    ilosc[i].style.backgroundColor = "yellow";
+                } else {
+                    ilosc[i].style.backgroundColor = "Honeydew";
+
+                }
+            }
+        }
+
+        function aktualizuj(paramter) {
+            let wartosc = prompt("Podaj nowa wartosc");
+           ilosc[paramter - 1].innerHTML = wartosc;
+
+            oblicz();
+        }
+        function zamow(paramter) {
+
+        }
+    </script>
+</body>
+
+</html>
