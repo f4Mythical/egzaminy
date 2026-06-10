@@ -29,6 +29,8 @@ while($row = mysqli_fetch_assoc($mq)){
     echo "<p>" . $row['Data'] . " " . $row['Temat'] . "</p>";
     
 }
+$id = $_GET['id'];
+$q = 
 mysqli_close($db);
             ?>
         </main> 

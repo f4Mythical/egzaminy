@@ -30,10 +30,9 @@ nav {
     height: 420px;
     overflow: auto;
 }
-#kontener {
+nav ul {
     display: flex;
-flex-direction: column;
-float: left;}
+}
 footer{
     clear: both;
 }
@@ -42,6 +41,11 @@ input,button {
 }
 li {
     display: inline-block;
+}
+#lewy { float: left }
+#kontener {
+    display: flex;
+    flex-direction: column;
 }
 img {
     width: 10%;
