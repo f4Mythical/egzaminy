@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header id="naglowkowy1">
+        <img src="czcionka.png" alt="salon">
+    </header>
+    <header id="naglowkowy2">
+        <h1>Studio Tatuazy</h1>
+    </header>
+    <section id="sekcja">
+        <h2>Galeria</h2>
+        <img src="smok.png" alt="smok.png" class="miniatury">
+        <img src="koliber.png" alt="koliber.png" class="miniatury">
+    </section>
+    <aside>
+        <h3>Dodaj wzór</h3>
+        <label for="wzor">Wzor</label><br>
+        <input type="file" name="wzor" id="wzor" accept="image/png"><br>
+        <label for="kolor">Kolor</label><br>
+        <select name="opcje" id="kolor">
+            <option value="czarny">Czarny</option>
+            <option value="czerwony">Czerwony</option>
+            <option value="zielony">Zielony</option>
+            <option value="niebieski">Niebieski</option>
+        </select><br>
+        <label for="cena">Cena</label><br>
+        <input type="number" name="cena" id="cena">
+        <button type="button" onclick="dodaj()">Dodaj Wzór:</button>
+    </aside>
+    <footer>
+        <p>Autor strony: 000000</p>
+    </footer>
+    <script>
+        function dodaj(){
+            // let wzor = document.getElementById('wzor').files[0]; 
+            // let nazwa = wzor.name;
+        let wzor = document.getElementById('wzor').value; 
+            let wycinek = wzor.substring(12);
+            let kolor = document.getElementById('kolor').value;
+            let cena = document.getElementById('cena').value;
+            alert("Wzor: "+ wycinek + ", kolor " + kolor + " w cenie "  + cena + " zł");     
+            let sekcja = document.getElementById('sekcja');
+           
+            let element = document.createElement('img');
+            element.setAttribute('src',wycinek);
+            element.setAttribute('alt',wycinek);
+            element.classList.add('miniatury');
+            sekcja.appendChild(element);
+        }
+        </script>
+</body>
+</html>
